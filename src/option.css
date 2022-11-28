@@ -1,0 +1,77 @@
+.main-data{
+  max-width: 800px;
+  margin: auto;
+  background: #0000001a;
+  padding: 30px;
+}
+.main-data .popup-data {
+  border: 1px solid;
+  border: 1px solid;
+  margin-bottom: 30px;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+}
+.main-data .heading.text {
+  border: 1px solid;
+  padding: 5px;
+  position: absolute;
+  top: -15px;
+  z-index: 10;
+  background: white;
+}
+.main-data .popup-data label {
+  font-size: 13px;
+  font-family: cursive;
+}
+.main-data .item-data {
+  padding-bottom: 10px;
+}
+.main-data button#save {
+  background: white;
+  border: none;
+  padding: 3px 20px;
+  font-size: 17px;
+  font-family: cursive;
+}
+.main-data-title-details-data {
+  display: flex;
+  justify-content: center;
+}
+.heading-tag-second{
+  text-align: center;
+  font-family: cursive;
+}
+#histordatabutton {
+background: white;
+    border: none;
+    padding: 3px 20px;
+    font-size: 17px;
+    font-family: cursive;
+    color: black;
+    text-decoration: none;
+  
+}
+#histordatabutton{
+  cursor: pointer;
+}
+.button-history{
+display: flex;
+gap: 15px;
+padding-top: 20px;
+
+}
+.downloadhistory{
+  background: white;
+    border: none;
+    padding: 3px 20px;
+    font-size: 17px;
+    font-family: cursive;
+    color: black;
+    text-decoration: none;
+}
+.disablelinkactivity{
+background: #ffffff6e;
+pointer-events: none;
+}

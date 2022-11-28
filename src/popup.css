@@ -1,0 +1,42 @@
+#fword{
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: cursive;
+}
+#footer-data-chrome{
+    margin-top: 10px;
+    font-size: 10px;
+    font-family: cursive;
+    border-top: 1px solid;
+}
+#child-container-answer{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.two-coloum-data-show{
+    grid-gap: 0 20px;
+    display: grid;
+    gap: 0px 20px;
+    grid-template-columns: repeat(2,minmax(50%,50%));
+    overflow: hidden;
+    padding-inline-start: 15px;
+}
+.word-value-data-detail-popup{
+    font-size: 16px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    font-weight: 700;
+    display: flex;
+    gap: 10px;
+}
+
+img.word-record-sound-data-popup {
+    height: 18px;
+}
+.button-sound-word-data-popup{
+background: transparent;
+    border: none;
+}
