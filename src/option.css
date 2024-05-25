@@ -1,77 +1,133 @@
-.main-data{
-  max-width: 800px;
-  margin: auto;
-  background: #0000001a;
-  padding: 30px;
+.option-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+      border: 1px solid black;
+        text-align: center;
 }
-.main-data .popup-data {
-  border: 1px solid;
-  border: 1px solid;
-  margin-bottom: 30px;
-  padding: 30px;
-  position: relative;
-  z-index: 1;
-  border-radius: 5px;
-}
-.main-data .heading.text {
-  border: 1px solid;
-  padding: 5px;
-  position: absolute;
-  top: -15px;
-  z-index: 10;
-  background: white;
-}
-.main-data .popup-data label {
-  font-size: 13px;
-  font-family: cursive;
-}
-.main-data .item-data {
-  padding-bottom: 10px;
-}
-.main-data button#save {
-  background: white;
-  border: none;
-  padding: 3px 20px;
-  font-size: 17px;
-  font-family: cursive;
-}
-.main-data-title-details-data {
-  display: flex;
-  justify-content: center;
-}
-.heading-tag-second{
-  text-align: center;
-  font-family: cursive;
-}
-#histordatabutton {
-background: white;
-    border: none;
-    padding: 3px 20px;
-    font-size: 17px;
-    font-family: cursive;
-    color: black;
-    text-decoration: none;
-  
-}
-#histordatabutton{
-  cursor: pointer;
-}
-.button-history{
-display: flex;
-gap: 15px;
-padding-top: 20px;
 
+.header-container {
+  display: flex;
+  align-items: center;
+
+      justify-content: center;
 }
-.downloadhistory{
-  background: white;
-    border: none;
-    padding: 3px 20px;
-    font-size: 17px;
-    font-family: cursive;
-    color: black;
-    text-decoration: none;
+
+.icon-img {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
 }
-.disablelinkactivity{
-background: #ffffff6e;
-pointer-events: none;
+
+.title-text {
+  margin: 0;
+}
+
+.subtitle-text {
+  margin-top: 10px;
+}
+
+.options-wrapper {
+  margin-top: 20px;
+}
+
+.option-group {
+  margin-bottom: 20px;
+}
+
+.option-heading {
+  margin-bottom: 10px;
+}
+
+.toggle-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.toggle-label input {
+  display: none;
+}
+
+.checkbox-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.checkbox-custom:before {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.toggle-label input:checked+.checkbox-custom:before {
+  display: block;
+}
+
+.toggle-label input:checked+.checkbox-custom {
+  background-color: #2196F3;
+}
+
+.checkbox-custom:before {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.toggle-label:hover .checkbox-custom {
+  background-color: #ccc;
+}
+
+.button-group {
+  margin-top: 10px;
+}
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.clear-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.download-link {
+  color: #2196F3;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.download-link.disabled {
+  color: #ccc;
+  pointer-events: none;
+}
+
+.status-text {
+  margin-top: 10px;
+  color: #4CAF50;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }

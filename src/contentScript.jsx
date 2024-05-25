@@ -46,7 +46,7 @@ function getSelectionText(datavalue, e) {
 
 
   const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${datavalue}`;
-  fetch(url)
+  fetch(url)* 
     .then(response => response.json())
     .then(response => {
       if (response && response[0]?.meanings[0]?.definitions[0]?.definition) {
@@ -107,7 +107,12 @@ function getSelectionText(datavalue, e) {
             synonymsData.forEach(function (item) {
               nHTML += item + ', ';
             });
-            iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-synoynms"><b>synonyms:</b><br>' + nHTML + '</div>';
+            if(synonymsData.length > 0 ){
+   iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-synoynms"><b>synonyms:</b><br>' + nHTML + '</div>';
+            }else{
+   iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-synoynms"><b>synonyms:</b><br> No Records </div>';
+            }
+         
           }
         }
       });
@@ -123,8 +128,12 @@ function getSelectionText(datavalue, e) {
             antonymsData.forEach(function (item) {
               anHTML += item + ', ';
             });
-            iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-antoymns"><b>Antonyms:</b><br>' + anHTML + '</div>';
-
+            // iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-antoymns"><b>Antonyms:</b><br>' + anHTML + '</div>';
+                    if(antonymsData.length > 0 ){
+   iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-antoymns"><b>Antonyms:</b><br>' + anHTML + '</div>';
+            }else{
+   iDiv.innerHTML = iDiv.innerHTML + '<br><div class="word-value-data-detail-antoymns"><b>Antonyms:</b><br> No Records </div>';
+          }
           }
         }
       });

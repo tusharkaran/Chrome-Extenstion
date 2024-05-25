@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 import "./option.css";
+import Checkbox from "@mui/material/Checkbox";
 
 function Options() {
-
-  const [popupSynomus, setpopupSynomus] = useState(true);
+   const [popupSynomus, setpopupSynomus] = useState(true);
   const [wordhistorynumber, setwordhistorynumber] = useState(0);
   const [disableLink, setdisableLink] = useState(true);
   const [historyWord, sethistoryWord] = useState(false);
@@ -112,78 +112,76 @@ function Options() {
 
   });
 
-
   return (
-    <div class="whole-chontainer-data-details">
-      <div class="main-data-title-details">
-        <div class="main-data-title-details-data">
-          <img class="img-icon-options" src="icon_48.png"></img>
-          <h1>Dictonary World</h1>
-        </div>
-        <h2 class="heading-tag-second">Extension Option</h2>
+    <div className="option-container">
+      <div className="header-container">
+        <img className="icon-img" src="icon_48.png" alt="icon"></img>
+        <h1 className="title-text">Dictionary World</h1>
       </div>
-      <div class="main-data">
-
-        <div class="popup-data">
-          <span class="heading text">Extension Content</span>
-          <div class="item-data">
-            <label>
-              Show synonyms While Searching in Popup :
-              <input type="checkbox" id="popupSynomusnew" checked={popupSynomus} onChange={popupSynomusData} />
-
-            </label>
-          </div>
-          <div class="item-data">
-            <label>
-              Show Antonyms While Searching in Popup :
-              <input type="checkbox" id="popupAnoymns" checked={popupAnoymns} onChange={popupAnoymnsData} />
-            </label>
+      <div className="options-wrapper">
+        <div className="option-group">
+          <h3 className="option-heading">Extension Content</h3>
+          <label className="toggle-label">
+            <Checkbox
+              checked={popupSynomus}
+              onChange={popupSynomusData}
+            />
+            Show Synonyms While Searching in Popup
+          </label>
+          <label className="toggle-label">
+            <Checkbox
+              checked={popupAnoymns}
+              onChange={popupAnoymnsData}
+            />
+            Show Antonyms While Searching in Popup
+          </label>
+        </div>
+        <div className="option-group">
+          <h3 className="option-heading">Popup Content</h3>
+          <label className="toggle-label">
+            <Checkbox
+              checked={displaypopup}
+              onChange={displaypopupData}
+            />
+            Display Popup on Double Click on Text
+          </label>
+          <label className="toggle-label">
+            <Checkbox
+              checked={popupSynomusSelect}
+              onChange={popupSynomusSelectData}
+            />
+            Show Synonyms While Selecting the Text
+          </label>
+          <label className="toggle-label">
+            <Checkbox
+              checked={popupAnoymnsSelect}
+              onChange={popupAnoymnsSelectData}
+            />
+            Show Antonyms While Selecting the Text
+          </label>
+        </div>
+        <div className="option-group">
+          <h3 className="option-heading">Word History</h3>
+          <label className="toggle-label">
+            <Checkbox
+              checked={historyWord}
+              onChange={historyWordSelectData}
+            />
+            Load Word in Your History
+          </label>
+          <p className="word-count-text">Number of Words: {wordhistorynumber}</p>
+          <div className="button-group">
+            <button className="clear-button" onClick={Clearhistory} disabled={disableLink}>Clear History</button>
+            <a href="#" className={`download-link ${disableLink ? "disabled" : ""}`} id="DownloadHistory" download="WordHistory.csv">Download History</a>
           </div>
         </div>
-        <div class="popup-data">
-          <span class="heading text">Popup Content</span>
-          <div class="item-data">
-            <label>
-              Display Popup on double click on text:
-              <input type="checkbox" id="displaypopup" checked={displaypopup} onChange={displaypopupData} />
-            </label>
-          </div>
-          <div class="item-data">
-            <label>
-              Show synonyms While Selecting the text:
-              <input type="checkbox" id="popupSynomusSelect" checked={popupSynomusSelect} onChange={popupSynomusSelectData} />
-            </label>
-          </div>
-          <div class="item-data">
-            <label>
-              Show Antonyms While Selecting the text :
-              <input type="checkbox" id="popupAnoymnsSelect" checked={popupAnoymnsSelect} onChange={popupAnoymnsSelectData} />
-            </label>
-          </div>
-        </div>
-        <div class="popup-data">
-          <span class="heading text">Word History</span>
-          <div class="item-data">
-            <label>
-              Load word in you history:
-              <input type="checkbox" id="historyWord" checked={historyWord} onChange={historyWordSelectData} />
-            </label>
-          </div>
-          <div class="item-data">
-            <label>
-              Number of word are {wordhistorynumber}
-            </label>
-          </div>
-          <div class="item-data button-history" >
-            <button id="histordatabutton" onClick={Clearhistory}>Clear History </button>
-            <a class={ disableLink ? "downloadhistory disablelinkactivity" : "downloadhistory"} id="DownloadHistory"  download="WordHistory.csv">Download History </a>
-          </div>
-        </div>
-        <div id="status"></div>
-        <button id="save" onClick={save_options}>Save</button>
-
       </div>
+      <div id="status" className="status-text"></div>
+      <button className="save-button" onClick={save_options}>Save</button>
     </div>
+
+
   );
 }
+
 render(<Options />, document.getElementById("root"));
